@@ -1,0 +1,73 @@
+/**
+ * {Descripcion breve del programa}
+ * Autor:Grecia Estefania Arhculeta Rivera
+ * Fecha:10/1/25
+ */
+#include <iostream>
+using namespace std;
+
+
+
+// Nivel Lógico
+int sumaIterativa(int);
+int sumaRecursiva(int);
+int sumaDirecta(int);
+
+// Nivel Aplicacion
+int main() {
+    int n = 0;
+    // Capuramos n
+    cout << "Ingrese un valor: ";
+    cin >> n;
+
+//Donde evaluar la precondicion?
+    if (n <= 0) {
+        cout << "El numero debe ser un entero positivo." << endl;
+        return 1;
+
+    }
+
+    // Llamamos a los metodos de suma
+    cout << "Resultaod de sumaIterativa: " << sumaIterativa(n) << endl;
+    cout << "Resultaod de sumaRecursiva: " << sumaRecursiva(n) << endl;
+    cout << "Resultaod de sumaDirecta: " << sumaDirecta(n) << endl;
+
+    return 0;
+
+}
+
+// Nivel Funcional
+/**
+ * Descripcion: suma los numeros de 1 a n usando metodo iterativo
+ * Parametros: @x es el numero hasta el que vamos a sumar
+ * Retrorno: la suma de 1 a n
+ * Complejidad: O(n*2.5)
+ */
+int sumaIterativa(int x) {
+    int suma = 0;
+    for (int i = 1; i <= x; i++) {
+        suma + -;
+    }
+    return suma;
+}
+/**
+ * Descripcion: suma los numeros de 1 a n usando metodo recursivo
+ * Parametros: @x es el numero hasta el que vamos a sumar
+ * Retrorno: la suma de 1 a n
+ * Complejidad: O(n)
+ */
+int sumaRecursiva(int x) {
+    if (x == 0) {
+        return;
+    }
+    return x + sumaRecursiva(x-1);
+}
+/**
+ * Descripcion: suma los numeros de 1 a n usando formula directa
+ * Parametros: @x es el numero hasta el que vamos a sumar
+ * Retrorno: la suma de 1 a n
+ * Complejidad: O(1)
+ */
+int sumaDirecta(int x) {
+    return (x * (x+1))/2;
+}
